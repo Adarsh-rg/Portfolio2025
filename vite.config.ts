@@ -8,13 +8,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: '/Portfolio2025',
+  // base: '/Portfolio2025',
+   base: mode === 'production' ? '/Portfolio/' : '/',
   plugins: [
     react(),
   ],
-  build: {
-    outDir: 'docs',
-  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
